@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FieldTile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FieldTile.Designer.cs">
+      <DependentUpon>FieldTile.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTicTacToe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FieldTile.resx">
+      <DependentUpon>FieldTile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTicTacToe.resx">
       <DependentUpon>frmTicTacToe.cs</DependentUpon>
     </EmbeddedResource>

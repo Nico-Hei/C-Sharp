@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace TicTacToe
 {
@@ -25,15 +26,14 @@ namespace TicTacToe
 
             Brush b = new SolidBrush(Color.Blue);
 
+            Size rectangle = new Size(80, 80);
             Rectangle[] rectangles = {
-                new Rectangle(10, 20, 80, 80), new Rectangle(100, 20, 80, 80), new Rectangle(190, 20, 80, 80),
-                new Rectangle(10, 110, 80, 80), new Rectangle(100, 110, 80, 80), new Rectangle(190, 110, 80, 80),
-                new Rectangle(10, 200, 80, 80), new Rectangle(100, 200, 80, 80), new Rectangle(190, 200, 80, 80)
+                new Rectangle(10, 20, rectangle.Width, rectangle.Height), new Rectangle(100, 20, rectangle.Width, rectangle.Height), new Rectangle(190, 20, rectangle.Width, rectangle.Height),
+                new Rectangle(10, 110, rectangle.Width, rectangle.Height), new Rectangle(100, 110, rectangle.Width, rectangle.Height), new Rectangle(190, 110, rectangle.Width, rectangle.Height),
+                new Rectangle(10, 200, rectangle.Width, rectangle.Height), new Rectangle(100, 200, rectangle.Width, rectangle.Height), new Rectangle(190, 200, rectangle.Width, rectangle.Height)
             };
 
-            //Rectangle r = new Rectangle(10, 20, 80, 80);
-            //g.DrawRectangle(p, r);
-            //g.FillRectangle(b, r);
+            
             g.DrawRectangles(p, rectangles);
             g.FillRectangles(b, rectangles);
         }
