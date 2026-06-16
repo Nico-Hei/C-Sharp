@@ -1,3 +1,3 @@
 # C-Sharp
 
-[TicTacToe](https://github.com/Nico-Hei/C-Sharp/blob/main/GDI%2B/README.md)
+[TicTacToe](https://github.com/Nico-Hei/C-Sharp/tree/main/GDI%2B/TicTacToe)
