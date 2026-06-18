@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,9 +13,19 @@ namespace TicTacToe
 {
     public partial class FieldTile : UserControl
     {
-        public FieldTile()
+        public FieldTile(int Pos)
         {
             InitializeComponent();
+            pos = Pos;
+            lblPos.Text = Convert.ToString(pos);
+        }
+
+        int pos = 0;
+        
+        public int Pos
+        {
+            get => pos;
+            set => pos = value;
         }
 
         string[] states = new string[] { "?", "X", "O" };

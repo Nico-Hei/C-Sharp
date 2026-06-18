@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.lblField = new System.Windows.Forms.Label();
+            this.lblPos = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblField
@@ -43,18 +44,30 @@
             this.lblField.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblField.Click += new System.EventHandler(this.lblField_Click);
             // 
+            // lblPos
+            // 
+            this.lblPos.AutoSize = true;
+            this.lblPos.Location = new System.Drawing.Point(8, 8);
+            this.lblPos.Name = "lblPos";
+            this.lblPos.Size = new System.Drawing.Size(18, 20);
+            this.lblPos.TabIndex = 1;
+            this.lblPos.Text = "?";
+            // 
             // FieldTile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblPos);
             this.Controls.Add(this.lblField);
             this.Name = "FieldTile";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Label lblField;
+        private System.Windows.Forms.Label lblPos;
     }
 }
