@@ -39,6 +39,23 @@ namespace TicTacToe
                 frmTicTacToe.state_list[pos] = frmTicTacToe.State; // Append to state list at specific pos index
                 frmTicTacToe.State++;
                 locked = true;
+                lblField.BackColor = Color.Gray;
+            }
+        }
+
+        private void lblField_MouseEnter(object sender, EventArgs e)
+        {
+            if(!locked) // Dont want to select an unselectable field
+            {
+                lblField.BackColor = Color.White;
+            }
+        }
+
+        private void lblField_MouseLeave(object sender, EventArgs e)
+        {
+            if (!locked)
+            {
+                lblField.BackColor = Color.Silver;
             }
         }
     }

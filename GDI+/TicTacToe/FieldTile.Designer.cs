@@ -43,6 +43,8 @@
             this.lblField.Text = "?";
             this.lblField.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblField.Click += new System.EventHandler(this.lblField_Click);
+            this.lblField.MouseEnter += new System.EventHandler(this.lblField_MouseEnter);
+            this.lblField.MouseLeave += new System.EventHandler(this.lblField_MouseLeave);
             // 
             // lblPos
             // 
