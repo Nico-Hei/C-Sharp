@@ -37,9 +37,15 @@ namespace TicTacToe
                 if (frmTicTacToe.State == 0) frmTicTacToe.State++;
                 lblField.Text = states[frmTicTacToe.State];
                 frmTicTacToe.state_list[pos] = frmTicTacToe.State; // Append to state list at specific pos index
+                if (frmTicTacToe.checkForWin(frmTicTacToe.State))
+                {
+                    MessageBox.Show($"{states[frmTicTacToe.State]} hat gewonnen!");
+                    Application.Restart();
+                }
                 frmTicTacToe.State++;
                 locked = true;
                 lblField.BackColor = Color.Gray;
+
             }
         }
 
