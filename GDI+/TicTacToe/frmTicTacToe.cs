@@ -20,6 +20,7 @@ namespace TicTacToe
         }
 
         static int state = 0;
+        public static int[] state_list = new int[9];
 
         public static int State
         {

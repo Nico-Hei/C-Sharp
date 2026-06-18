@@ -21,6 +21,7 @@ namespace TicTacToe
         }
 
         int pos = 0;
+        bool locked = false;
         
         public int Pos
         {
@@ -31,9 +32,14 @@ namespace TicTacToe
         string[] states = new string[] { "?", "X", "O" };
         private void lblField_Click(object sender, EventArgs e)
         {
-            if (frmTicTacToe.State == 0) frmTicTacToe.State++;
-            lblField.Text = states[frmTicTacToe.State];
-            frmTicTacToe.State++;
+            if(!locked) // Cant change field state twice
+            {
+                if (frmTicTacToe.State == 0) frmTicTacToe.State++;
+                lblField.Text = states[frmTicTacToe.State];
+                frmTicTacToe.state_list[pos] = frmTicTacToe.State; // Append to state list at specific pos index
+                frmTicTacToe.State++;
+                locked = true;
+            }
         }
     }
 }
