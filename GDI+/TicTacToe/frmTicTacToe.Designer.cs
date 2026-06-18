@@ -34,10 +34,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(478, 644);
+            this.ClientSize = new System.Drawing.Size(508, 544);
             this.Name = "frmTicTacToe";
             this.Text = "TicTacToe";
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmTicTacToe_Paint);
+            this.Load += new System.EventHandler(this.frmTicTacToe_Load);
             this.ResumeLayout(false);
 
         }

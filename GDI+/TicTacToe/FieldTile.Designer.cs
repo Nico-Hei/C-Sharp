@@ -28,24 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblSymbol = new System.Windows.Forms.Label();
+            this.lblField = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // lblSymbol
+            // lblField
             // 
-            this.lblSymbol.BackColor = System.Drawing.Color.Transparent;
-            this.lblSymbol.Location = new System.Drawing.Point(0, 0);
-            this.lblSymbol.Name = "lblSymbol";
-            this.lblSymbol.Size = new System.Drawing.Size(150, 150);
-            this.lblSymbol.TabIndex = 0;
-            this.lblSymbol.Text = "?";
-            this.lblSymbol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblField.BackColor = System.Drawing.Color.Silver;
+            this.lblField.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblField.Location = new System.Drawing.Point(0, 0);
+            this.lblField.Name = "lblField";
+            this.lblField.Size = new System.Drawing.Size(150, 150);
+            this.lblField.TabIndex = 0;
+            this.lblField.Text = "?";
+            this.lblField.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblField.Click += new System.EventHandler(this.lblField_Click);
             // 
             // FieldTile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.lblSymbol);
+            this.Controls.Add(this.lblField);
             this.Name = "FieldTile";
             this.ResumeLayout(false);
 
@@ -53,6 +55,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblSymbol;
+        private System.Windows.Forms.Label lblField;
     }
 }

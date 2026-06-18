@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
+using static System.Windows.Forms.AxHost;
 
 namespace TicTacToe
 {
@@ -18,24 +19,35 @@ namespace TicTacToe
             InitializeComponent();
         }
 
-        private void frmTicTacToe_Paint(object sender, PaintEventArgs e)
+        static int state = 0;
+
+        public static int State
         {
-            Graphics g = e.Graphics;
+            get => state;
+            set
+            {
+                if (value > 2) state = 1;
+                else state = value;
+            }
+        }
 
-            Pen p = new Pen(Color.Blue, 0);
+        private void frmTicTacToe_Load(object sender, EventArgs e)
+        {
+            int x = 10;
+            int y = 20;
 
-            Brush b = new SolidBrush(Color.Blue);
-
-            Size rectangle = new Size(80, 80);
-            Rectangle[] rectangles = {
-                new Rectangle(10, 20, rectangle.Width, rectangle.Height), new Rectangle(100, 20, rectangle.Width, rectangle.Height), new Rectangle(190, 20, rectangle.Width, rectangle.Height),
-                new Rectangle(10, 110, rectangle.Width, rectangle.Height), new Rectangle(100, 110, rectangle.Width, rectangle.Height), new Rectangle(190, 110, rectangle.Width, rectangle.Height),
-                new Rectangle(10, 200, rectangle.Width, rectangle.Height), new Rectangle(100, 200, rectangle.Width, rectangle.Height), new Rectangle(190, 200, rectangle.Width, rectangle.Height)
-            };
-
-            
-            g.DrawRectangles(p, rectangles);
-            g.FillRectangles(b, rectangles);
+            for(int i = 1; i <= 3; i++)
+            {
+                for (int j = 1; j < 4; j++)
+                {
+                    FieldTile tile = new FieldTile();
+                    tile.Location = new Point(x,y);
+                    this.Controls.Add(tile);
+                    y += 110;
+                }
+                x += 110;
+                y = 20;
+            }
         }
     }
 }

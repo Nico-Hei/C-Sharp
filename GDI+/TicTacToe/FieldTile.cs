@@ -16,5 +16,13 @@ namespace TicTacToe
         {
             InitializeComponent();
         }
+
+        string[] states = new string[] { "?", "X", "O" };
+        private void lblField_Click(object sender, EventArgs e)
+        {
+            if (frmTicTacToe.State == 0) frmTicTacToe.State++;
+            lblField.Text = states[frmTicTacToe.State];
+            frmTicTacToe.State++;
+        }
     }
 }
