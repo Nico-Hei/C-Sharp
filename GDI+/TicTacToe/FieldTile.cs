@@ -35,6 +35,7 @@ namespace TicTacToe
             if(!locked) // Cant change field state twice
             {
                 if (frmTicTacToe.State == 0) frmTicTacToe.State++;
+                if (frmTicTacToe.draw_counter == 0) frmTicTacToe.draw_counter++;
                 lblField.Text = states[frmTicTacToe.State];
                 frmTicTacToe.state_list[pos] = frmTicTacToe.State; // Append to state list at specific pos index
                 if (frmTicTacToe.checkForWin(frmTicTacToe.State))
@@ -42,7 +43,13 @@ namespace TicTacToe
                     MessageBox.Show($"{states[frmTicTacToe.State]} hat gewonnen!");
                     Application.Restart();
                 }
+                if (frmTicTacToe.checkForDraw())
+                {
+                    MessageBox.Show($"Unentschieden!");
+                    Application.Restart();
+                }
                 frmTicTacToe.State++;
+                frmTicTacToe.draw_counter++;
                 locked = true;
                 lblField.BackColor = Color.Gray;
 

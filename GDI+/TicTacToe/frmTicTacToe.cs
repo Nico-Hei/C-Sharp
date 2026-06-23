@@ -20,6 +20,7 @@ namespace TicTacToe
         }
 
         static int state = 0;
+        public static int draw_counter = 0;
         public static int[] state_list = new int[9];
 
         public static int State
@@ -44,6 +45,12 @@ namespace TicTacToe
             if (state_list[2] == state && state_list[4] == state && state_list[6] == state) return true; // top-right to bottom-left
 
             return false;
+        }
+
+        public static bool checkForDraw()
+        {
+            if (draw_counter == 9) return true;
+            else return false;
         }
 
         private void frmTicTacToe_Load(object sender, EventArgs e)
