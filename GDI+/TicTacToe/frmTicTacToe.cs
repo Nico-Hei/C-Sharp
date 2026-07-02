@@ -35,10 +35,15 @@ namespace TicTacToe
 
         public static bool checkForWin(int state)
         {
-            // Horizontal
+            // Vertikal
             if (state_list[0] == state && state_list[1] == state && state_list[2] == state) return true;
             if (state_list[3] == state && state_list[4] == state && state_list[5] == state) return true;
             if (state_list[6] == state && state_list[7] == state && state_list[8] == state) return true;
+
+            // Horizontal
+            if (state_list[0] == state && state_list[3] == state && state_list[6] == state) return true;
+            if (state_list[1] == state && state_list[4] == state && state_list[7] == state) return true;
+            if (state_list[2] == state && state_list[5] == state && state_list[8] == state) return true;
 
             // Diagonal
             if (state_list[0] == state && state_list[4] == state && state_list[8] == state) return true; // top-left to bottom-right
